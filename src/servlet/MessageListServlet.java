@@ -19,9 +19,10 @@ public class MessageListServlet extends ChatServlet {
         pw.println("<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'/><meta http-equiv='refresh' content='1'></head>");
         pw.println("<body>");
         // В обратном порядке записать в поток HTML-разметку для каждого сообщения
+        // добавили счетчик для количества сообщений
         for (int i=0; i<messages.size(); i++) {
             ChatMessage aMessage = messages.get(i);
-            pw.println("<div><strong>" + aMessage.getAuthor().getName() + "[" + aMessage.getAuthor().getMessCount()+ "]"+"</strong>: " + aMessage.getMessage() + "</div>");
+            pw.println("<div><strong>" + aMessage.getAuthor().getName()+ "[" + aMessage.getAuthor().getMessCount()+ "]" +"</strong>: " + aMessage.getMessage() + "</div>");
         }
         pw.println("</body></html>");
     }
